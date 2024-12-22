@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Goal : MonoBehaviour
+public class Stage2 : MonoBehaviour
 {
     private GameManager gameData;
 
@@ -11,12 +11,13 @@ public class Goal : MonoBehaviour
         gameData = GameObject.FindGameObjectWithTag("Data").GetComponent<GameManager>();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void BtnBackStage()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            gameData.TimeControl(0);
-        }
-        // 시간은 멈췄으니, 클리어 화면 띄우기
+        gameData.ChangeScene(1);
+    }
+
+    public void BtnLevel1()
+    {
+
     }
 }
